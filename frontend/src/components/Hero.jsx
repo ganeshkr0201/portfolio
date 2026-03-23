@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import profileImg from '../assets/profile.jpg';
+import cvPdf from '../assets/ganeshCV.pdf';
 
 const Hero = () => {
   return (
@@ -40,12 +41,15 @@ const Hero = () => {
             Backend and Generative AI Developer with expertise in MERN stack, Python, and LangChain. Specializes in building scalable backend systems and integrating AI-powered solutions to enhance user experiences. Passionate about solving complex real-world problems efficiently.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
             <a href="#projects" className="px-8 py-3 rounded-full bg-gradient-to-r from-neon to-accent text-white font-semibold hover:shadow-[0_0_20px_rgba(14,165,233,0.4)] transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto text-center">
               View Projects
             </a>
             <a href="#contact" className="px-8 py-3 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-white font-semibold hover:bg-white/10 transition-all duration-300 w-full sm:w-auto text-center">
               Contact Me
+            </a>
+            <a href={cvPdf} download="Ganesh_Kumar_CV.pdf" className="px-8 py-3 rounded-full bg-gradient-to-r from-accent to-neon text-white font-semibold hover:shadow-[0_0_20px_rgba(14,165,233,0.4)] transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto text-center">
+              Download CV
             </a>
           </div>
         </motion.div>
