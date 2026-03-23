@@ -27,14 +27,14 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #05050f;
+  background: #0f172a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1f2937;
+  background: #334155;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #374151;
+  background: #475569;
 }
 
 /* Background Particle Grid Pattern */

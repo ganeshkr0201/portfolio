@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import cvPdf from '../assets/ganeshCV.pdf';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,13 +46,16 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
-              className="flex space-x-6"
+              className="flex items-center space-x-6"
             >
               {navLinks.map((link) => (
                 <a key={link.name} href={link.href} className="text-gray-300 hover:text-white hover:text-shadow-sm transition-colors text-sm font-medium">
                   {link.name}
                 </a>
               ))}
+              <a href={cvPdf} download="Ganesh_Kumar_CV.pdf" className="px-5 py-2 text-sm font-semibold rounded-full bg-gradient-to-r from-primary to-accent text-white transition-all shadow-lg hover:shadow-[0_0_20px_rgba(56,189,248,0.5)]">
+                Download CV
+              </a>
             </motion.div>
           </div>
 
@@ -84,6 +88,15 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
+              <div className="pt-4 pb-2 px-3">
+                <a
+                  href={cvPdf}
+                  download="Ganesh_Kumar_CV.pdf"
+                  className="block w-full text-center px-4 py-3 text-base font-semibold text-white bg-gradient-to-r from-primary to-accent rounded-md shadow-lg"
+                >
+                  Download CV
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
