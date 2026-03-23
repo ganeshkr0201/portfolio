@@ -58,10 +58,10 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
-            Get in <span className="text-gradient">Touch</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-white tracking-tight">
+            Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-neon">Touch</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-neon to-accent mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12 items-start relative z-10">
@@ -74,7 +74,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-2 space-y-8"
           >
-            <div className="glass-panel p-8">
+            <div className="glass-panel p-8 border border-white/5 bg-white/[0.02] shadow-xl">
               <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
               <p className="text-gray-400 mb-8 leading-relaxed">
                 Whether you have a question, a project proposal, or just want to say hi, my inbox is always open. I'll thoughtfully respond as soon as possible.
@@ -82,7 +82,7 @@ const Contact = () => {
 
               <div className="space-y-6">
                 <div className="flex items-center gap-4 group">
-                  <div className="p-4 bg-white/5 rounded-full border border-white/10 group-hover:border-neon/50 text-neon group-hover:scale-110 transition-all duration-300">
+                  <div className="p-4 bg-white/5 rounded-full border border-white/10 group-hover:border-primary/50 text-primary group-hover:scale-110 transition-all duration-300">
                     <Mail size={24} />
                   </div>
                   <div>
@@ -92,7 +92,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-center gap-4 group">
-                  <div className="p-4 bg-white/5 rounded-full border border-white/10 group-hover:border-accent/50 text-accent group-hover:scale-110 transition-all duration-300">
+                  <div className="p-4 bg-white/5 rounded-full border border-white/10 group-hover:border-neon/50 text-neon group-hover:scale-110 transition-all duration-300">
                     <Phone size={24} />
                   </div>
                   <div>
@@ -111,7 +111,7 @@ const Contact = () => {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-gradient-to-r hover:from-neon/20 hover:to-accent/20 hover:border-white/20 transition-all duration-300 flex items-center gap-2 group"
+                      className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-gradient-to-r hover:from-primary/20 hover:to-neon/20 hover:border-primary/20 transition-all duration-300 flex items-center gap-2 group"
                     >
                       <span>{link.name}</span>
                       <span className="text-gray-500 group-hover:text-white transition-colors">{link.icon}</span>
@@ -130,8 +130,8 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="lg:col-span-3"
           >
-            <div className="glass-panel p-8 lg:p-10 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 blur-3xl rounded-full pointer-events-none"></div>
+            <div className="glass-panel p-8 lg:p-10 relative overflow-hidden border border-white/5 bg-white/[0.02] shadow-xl">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-3xl rounded-full pointer-events-none"></div>
 
               <h3 className="text-2xl font-bold text-white mb-6">Send Me a Message</h3>
 
@@ -146,7 +146,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-neon/50 focus:border-transparent transition-all"
+                      className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all"
                       placeholder="Rohit Sharma"
                     />
                   </div>
@@ -159,7 +159,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-neon/50 focus:border-transparent transition-all"
+                      className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all"
                       placeholder="rohitsharma@gmail.com"
                     />
                   </div>
@@ -185,12 +185,12 @@ const Contact = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className={`p-4 rounded-xl flex items-center gap-3 ${status.state === 'success' ? 'bg-green-500/10 border border-green-500/20 text-green-400' :
                       status.state === 'error' ? 'bg-red-500/10 border border-red-500/20 text-red-400' :
-                        'bg-neon/10 border border-neon/20 text-neon'
+                        'bg-primary/10 border border-primary/20 text-primary'
                       }`}
                   >
                     {status.state === 'success' ? <CheckCircle size={20} /> :
                       status.state === 'error' ? <AlertCircle size={20} /> :
-                        <div className="w-5 h-5 border-2 border-neon border-t-transparent rounded-full animate-spin"></div>}
+                        <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>}
                     <span className="font-medium text-sm">{status.message}</span>
                   </motion.div>
                 )}
@@ -198,7 +198,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={status.state === 'loading'}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-neon to-accent text-white font-bold text-lg hover:shadow-[0_0_20px_rgba(14,165,233,0.4)] transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2 disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:shadow-none"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-neon text-white font-bold text-lg hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2 disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:shadow-none"
                 >
                   <Send size={20} /> {status.state === 'loading' ? 'Sending...' : 'Send Message'}
                 </button>

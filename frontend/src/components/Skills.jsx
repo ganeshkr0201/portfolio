@@ -5,32 +5,32 @@ import { Code2, Database, Layout, Lightbulb, Wrench } from 'lucide-react';
 const skillCategories = [
   {
     title: 'Programming Languages',
-    icon: <Code2 className="text-neon" size={24} />,
+    icon: <Code2 className="text-primary" size={24} />,
     skills: ['C++', 'Python', 'JavaScript']
   },
   {
     title: 'Frontend',
-    icon: <Layout className="text-accent" size={24} />,
+    icon: <Layout className="text-neon" size={24} />,
     skills: ['HTML', 'CSS', 'React', 'EJS']
   },
   {
     title: 'Backend',
-    icon: <Database className="text-neon" size={24} />,
+    icon: <Database className="text-primary" size={24} />,
     skills: ['Node.js', 'Express.js']
   },
   {
     title: 'Database',
-    icon: <Database className="text-accent" size={24} />,
+    icon: <Database className="text-neon" size={24} />,
     skills: ['MongoDB', 'SQL', 'Redis', 'Vector Database']
   },
   {
     title: 'Gen AI',
-    icon: <Lightbulb className="text-neon" size={24} />,
+    icon: <Lightbulb className="text-primary" size={24} />,
     skills: ['LangChain', 'LLMs', 'RAG']
   },
   {
     title: 'Tools & Technologies',
-    icon: <Wrench className="text-accent" size={24} />,
+    icon: <Wrench className="text-neon" size={24} />,
     skills: ['Git', 'GitHub', 'Docker', 'Postman']
   }
 ];
@@ -53,7 +53,7 @@ const itemVariants = {
 const Skills = () => {
   return (
     <section id="skills" className="w-full py-24 px-4 sm:px-6 lg:px-8 relative">
-      <div className="absolute top-0 right-1/4 w-72 h-72 bg-neon/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute top-0 right-1/4 w-72 h-72 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -63,10 +63,10 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
-            Technical <span className="text-gradient">Skills</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-white tracking-tight">
+            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-neon">Skills</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-neon to-accent mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
         </motion.div>
 
         <motion.div
@@ -77,12 +77,12 @@ const Skills = () => {
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {skillCategories.map((category, idx) => (
-            <motion.div key={idx} variants={itemVariants} className="glass-card p-6 relative overflow-hidden group">
+            <motion.div key={idx} variants={itemVariants} className="glass-card p-6 relative overflow-hidden group hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(37,99,235,0.1)] transition-all duration-300 border border-white/5 bg-white/[0.02]">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                 {category.icon}
               </div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:border-neon/50 transition-colors">
+                <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:border-primary/50 transition-colors">
                   {category.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-white">{category.title}</h3>
@@ -92,7 +92,7 @@ const Skills = () => {
                 {category.skills.map((skill, sIdx) => (
                   <span
                     key={sIdx}
-                    className="px-3 py-1 text-sm font-medium rounded-full bg-white/5 border border-white/10 text-gray-300 group-hover:bg-gradient-to-r group-hover:from-neon/10 group-hover:to-accent/10 transition-colors duration-300"
+                    className="px-3 py-1 text-sm font-medium rounded-full bg-white/5 border border-white/10 text-gray-300 group-hover:bg-gradient-to-r group-hover:from-primary/10 group-hover:to-neon/10 transition-colors duration-300"
                   >
                     {skill}
                   </span>

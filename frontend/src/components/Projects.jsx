@@ -56,10 +56,10 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
-            Featured <span className="text-gradient">Projects</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-white tracking-tight">
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-neon">Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-neon to-accent mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
         </motion.div>
 
         <motion.div 
@@ -73,10 +73,10 @@ const Projects = () => {
             <motion.div 
               key={idx} 
               variants={cardVariants}
-              className="glass-panel group relative overflow-hidden flex flex-col h-full hover:shadow-[0_0_40px_rgba(139,92,246,0.15)] transition-all duration-500 hover:-translate-y-2 border border-white/10 hover:border-accent/40"
+              className="glass-panel group relative overflow-hidden flex flex-col h-full hover:shadow-[0_0_30px_rgba(37,99,235,0.15)] transition-all duration-500 hover:-translate-y-2 border border-white/5 hover:border-primary/40 bg-white/[0.02]"
             >
               {/* Glow overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-neon/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-neon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               
               <div className="p-8 relative z-10 flex-grow flex flex-col">
                 <div className="flex justify-between items-start mb-6">
