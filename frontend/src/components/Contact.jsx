@@ -15,22 +15,29 @@ const Contact = () => {
     setStatus({ state: 'loading', message: 'Sending message...' });
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-      const response = await fetch(`${apiUrl}/api/contact`, {
-        method: 'POST',
+      // Using Web3Forms to bypass Render's strict SMTP port blocking
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          // Add your Access Key here, or via your environment variables
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
       });
 
-      const data = await response.json();
+      const result = await response.json();
 
-      if (response.ok) {
+      if (result.success) {
         setStatus({ state: 'success', message: 'Message sent successfully! I will get back to you soon.' });
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus({ state: 'error', message: data.error || 'Failed to send message.' });
+        setStatus({ state: 'error', message: result.message || 'Failed to send message.' });
       }
     } catch (error) {
       console.error('Contact error:', error);
