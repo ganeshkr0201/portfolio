@@ -5,12 +5,12 @@ import cvPdf from '../assets/ganeshCV.pdf';
 
 const Hero = () => {
   return (
-    <section id="hero" className="w-full min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8 relative">
+    <section id="hero" className="relative flex items-center justify-center w-full min-h-screen px-4 pt-20 sm:px-6 lg:px-8">
       {/* Decorative Glow Elements - Adjusted for Professional Look */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center z-10">
+      <div className="z-10 grid items-center w-full gap-12 mx-auto max-w-7xl lg:grid-cols-2">
         
         {/* Left Content */}
         <motion.div 
@@ -25,23 +25,23 @@ const Hero = () => {
             transition={{ delay: 0.2 }}
             className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm self-center lg:self-start w-max"
           >
-            <span className="text-sm text-gray-300 font-medium">Hello there, I'm</span>
+            <span className="text-sm font-medium text-gray-300">Hello there, I'm</span>
           </motion.div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
             Ganesh <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-neon">Kumar</span>.
           </h1>
           
-          <h2 className="text-xl sm:text-2xl text-gray-400 font-medium">
-            Backend & Systems Engineer <br/>
-            <span className="text-sm font-normal text-neon uppercase tracking-widest mt-2 block">MERN Stack | LangChain Specialist</span>
+          <h2 className="text-xl font-medium text-gray-400 sm:text-2xl">
+            Backend & Gen AI Developer <br/>
+            <span className="block mt-2 text-sm font-normal tracking-widest uppercase text-neon">MERN Stack | LangChain Specialist</span>
           </h2>
           
-          <p className="text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed text-lg">
+          <p className="max-w-xl mx-auto text-lg leading-relaxed text-gray-400 lg:mx-0">
             Backend and Generative AI Developer with expertise in MERN stack, Python, and LangChain. Specializes in building scalable backend systems and integrating AI-powered solutions to enhance user experiences. Passionate about solving complex real-world problems efficiently.
           </p>
           
-          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+          <div className="flex flex-col flex-wrap items-center justify-center gap-4 pt-4 sm:flex-row lg:justify-start">
             <a href="#projects" className="px-8 py-3.5 rounded-md bg-primary text-white font-medium hover:bg-opacity-90 transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:-translate-y-0.5 w-full sm:w-auto text-center">
               View Projects
             </a>
@@ -59,12 +59,12 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative flex justify-center items-center h-full hidden lg:flex"
+          className="relative flex items-center justify-center hidden h-full lg:flex"
         >
           <div className="relative w-80 h-80 sm:w-[400px] sm:h-[400px] flex items-center justify-center group">
             
             {/* Elegant glowing backdrop */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-neon/20 rounded-2xl blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div className="absolute inset-0 transition-opacity duration-500 bg-gradient-to-tr from-primary/20 to-neon/20 rounded-2xl blur-2xl opacity-60 group-hover:opacity-100"></div>
             
             {/* Clean, professional border frame instead of circle */}
             <div className="absolute inset-[-4px] bg-gradient-to-tr from-primary/40 to-neon/40 rounded-2xl opacity-40 transition-opacity duration-500 group-hover:opacity-80"></div>
@@ -73,12 +73,12 @@ const Hero = () => {
             <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-full h-full rounded-2xl bg-background border border-white/10 overflow-hidden relative z-10 shadow-2xl"
+              className="relative z-10 w-full h-full overflow-hidden border shadow-2xl rounded-2xl bg-background border-white/10"
             >
                 <img 
                   src={profileImg} 
                   alt="Ganesh Kumar" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" 
                 />
             </motion.div>
 
