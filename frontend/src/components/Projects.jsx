@@ -15,7 +15,7 @@ const projects = [
       'Focus on contextual AI responses'
     ],
     tech: ['Node.js', 'Express', 'MongoDB', 'LangChain', 'Gemini API'],
-    github: 'https://github.com/ganeshkr0201/',
+    github: 'https://github.com/ganeshkr0201/medGuruBackend',
   },
   {
     title: 'Blog Verse',
@@ -28,7 +28,7 @@ const projects = [
       'Server-side rendering implementation using EJS',
     ],
     tech: ['Node.js', 'Express', 'MongoDB', 'EJS', 'CSS'],
-    github: 'https://github.com/ganeshkr0201/',
+    github: 'https://github.com/ganeshkr0201/blogVerse',
   }
 ];
 
@@ -44,22 +44,22 @@ const cardVariants = {
 
 const Projects = () => {
   return (
-    <section id="projects" className="w-full py-24 px-4 sm:px-6 lg:px-8 relative">
+    <section id="projects" className="relative w-full px-4 py-24 sm:px-6 lg:px-8">
       {/* Decorative */}
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-neon/5 to-transparent pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none h-1/2 bg-gradient-to-t from-neon/5 to-transparent"></div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-white tracking-tight">
+          <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-neon">Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-primary to-accent"></div>
         </motion.div>
 
         <motion.div 
@@ -67,7 +67,7 @@ const Projects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid lg:grid-cols-2 gap-8"
+          className="grid gap-8 lg:grid-cols-2"
         >
           {projects.map((project, idx) => (
             <motion.div 
@@ -76,44 +76,44 @@ const Projects = () => {
               className="glass-panel group relative overflow-hidden flex flex-col h-full hover:shadow-[0_0_30px_rgba(37,99,235,0.15)] transition-all duration-500 hover:-translate-y-2 border border-white/5 hover:border-primary/40 bg-white/[0.02]"
             >
               {/* Glow overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-neon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
+              <div className="absolute inset-0 z-0 transition-opacity duration-500 opacity-0 pointer-events-none bg-gradient-to-br from-primary/5 to-neon/5 group-hover:opacity-100"></div>
               
-              <div className="p-8 relative z-10 flex-grow flex flex-col">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="p-4 bg-background/50 rounded-2xl border border-white/5 backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+              <div className="relative z-10 flex flex-col flex-grow p-8">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="p-4 transition-transform duration-300 border bg-background/50 rounded-2xl border-white/5 backdrop-blur-sm group-hover:scale-110">
                     {project.icon}
                   </div>
                   <div className="flex items-center gap-3">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 transition-colors rounded-full hover:text-white hover:bg-white/5">
                       <Github size={22} />
                     </a>
                     {/* Add external link if available */}
-                    <button className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full cursor-not-allowed opacity-50">
+                    <button className="p-2 text-gray-400 transition-colors rounded-full opacity-50 cursor-not-allowed hover:text-white hover:bg-white/5">
                       <ExternalLink size={22} />
                     </button>
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-gradient transition-colors">
+                <h3 className="mb-2 text-2xl font-bold text-white transition-colors group-hover:text-gradient">
                   {project.title}
                 </h3>
-                <p className="text-sm font-medium text-neon mb-4">Target: {project.date}</p>
+                <p className="mb-4 text-sm font-medium text-neon">Target: {project.date}</p>
                 
-                <p className="text-gray-400 mb-6 leading-relaxed">
+                <p className="mb-6 leading-relaxed text-gray-400">
                   {project.description}
                 </p>
 
-                <ul className="space-y-2 mb-8 flex-grow">
+                <ul className="flex-grow mb-8 space-y-2">
                   {project.features.map((feature, fIdx) => (
-                    <li key={fIdx} className="text-sm text-gray-300 flex items-start gap-2">
-                      <span className="text-accent mt-1">•</span> {feature}
+                    <li key={fIdx} className="flex items-start gap-2 text-sm text-gray-300">
+                      <span className="mt-1 text-accent">•</span> {feature}
                     </li>
                   ))}
                 </ul>
 
                 <div className="flex flex-wrap gap-2 pt-4 mt-auto border-t border-white/5">
                   {project.tech.map((tech, tIdx) => (
-                    <span key={tIdx} className="text-xs font-medium text-gray-400 bg-background/50 px-3 py-1 rounded-full border border-white/5">
+                    <span key={tIdx} className="px-3 py-1 text-xs font-medium text-gray-400 border rounded-full bg-background/50 border-white/5">
                       {tech}
                     </span>
                   ))}
